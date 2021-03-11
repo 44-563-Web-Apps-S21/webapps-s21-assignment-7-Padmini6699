@@ -24,37 +24,33 @@
   <button type="button"
   class="btn btn-primary"
   onclick="recordReact()">
-  React Now.</button>
+  React Now</button>
   
   
   
-  <script> 
-  var myTime= undefined
-  var buttonTime = Date.now()
+  <script>
+    var myTime = undefined
+    var buttonTime = Date.now()
     function recordReact() {
         myTime = Date.now();
         console.log("Time : " + myTime);
-      }
+    }
 
-  function startTime() {
-    for(let i=0;i<4;i++)
-    setTimeout(()=>{
-      document.getElementById('target').innerHTML = i
-    }, (3-i)*1000)
-    setTimeout(() =>{
-      if (myTime ==undefined){
-          document.getElementById('target').innerHTML ="Too Slow"
-      }
-      else{
-          document.getElementById('target').innerHTML ="time was " + (myTime - buttonTime);
-      }
-  },3000)
+    function startTime() {
+        var rand = Math.floor(Math.random() * 10) + 2;
+        for (let i = 0; i < rand+1; i++)
+            setTimeout(() => {
+                document.getElementById('countdown').innerHTML = i
+            }, (rand - i) * 1000)
+        setTimeout(() => {
+            if (myTime == undefined) {
+                document.getElementById('target').innerHTML = "Too Slow"
+            }
+            else {
+                document.getElementById('target').innerHTML = "time was " + (myTime - buttonTime);
+            }
+        }, 3000)
 
-  }
+    }
 
-  
-
-  </script>
-
-</body>
-</html>
+</script>
