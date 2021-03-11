@@ -59,7 +59,16 @@
         <script>ids = ["image0", "image1", "image2", "image3", "image4", "image5", "image6", "image7", "image8", "image9", "image10", "image11", "image12", "image13", "image14",
           "image15", "image16", "image17", "image18", "image19", "image20", "image21", "image22", "image23", "image24"]
           var clickCount = 0;
-          var treasureLocation = 18;
+          var treasureLocation = Math.floor(Math.random() * ids.length)
+        
+        console.log(treasureLocation)
+
+        const newGame = () => {
+            clickCount = 0;
+            treasureLocation = Math.floor(Math.random() * ids.length)
+        }
+
+          //var treasureLocation = 18;
         
           const makeGuess = (pos) => {
                     let imgId;
